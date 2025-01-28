@@ -24,7 +24,11 @@ module.exports = {
     }),
   ],
   module: {
-    rules: [
+{ test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
+```
+- Consider adding a `resolve.extensions` configuration to automatically resolve file extensions, such as `.js` and `.jsx`, to improve readability.
+
+```
       { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
       { test: /\.(svg|ttf|eot|woff(2)?)(\?[a-z0-9=&.]+)?$/, loader: 'file-loader' },
     ],
