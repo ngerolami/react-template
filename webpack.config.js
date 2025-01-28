@@ -19,7 +19,11 @@ module.exports = {
       },
     }),
     new HtmlWebpackPlugion({
-      template: './index.ejs',
+new HtmlWebpackPlugin({
+```
+- Fix the typo in the plugin name: `HtmlWebpackPlugion` should be `HtmlWebpackPlugin`.
+
+```
       filename: 'index.html',
     }),
   ],
