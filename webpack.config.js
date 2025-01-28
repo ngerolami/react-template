@@ -26,7 +26,14 @@ module.exports = {
   module: {
 { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
 ```
-- Consider adding a `resolve.extensions` configuration to automatically resolve file extensions, such as `.js` and `.jsx`, to improve readability.
+resolve: {
+        extensions: ['.js', '.jsx'],
+      },
+```
+- Add a `resolve.extensions` configuration to automatically resolve file extensions, such as `.js` and `.jsx`, to improve readability.
+
+src/index.js:
+```
 
 ```
       { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
