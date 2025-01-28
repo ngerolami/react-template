@@ -24,7 +24,15 @@ module.exports = {
     }),
   ],
   module: {
-{ test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
+module: {
+    rules: [
+      { test: /\.jsx?$/, loader: 'babel-loader', exclude: /node_modules/ },
+      { test: /\.(svg|ttf|eot|woff(2)?)(\?[a-z0-9=&.]+)?$/, loader: 'file-loader' },
+    ],
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
 ```
 resolve: {
         extensions: ['.js', '.jsx'],
