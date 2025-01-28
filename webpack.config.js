@@ -32,7 +32,13 @@ module: {
   },
   resolve: {
     extensions: ['.js', '.jsx'],
-  },
+resolve: {
+  extensions: ['.js', '.jsx'],
+},
+```
+- Add a `resolve.extensions` configuration to automatically resolve file extensions, such as `.js` and `.jsx`, to improve readability.
+
+```
 resolve: {
 ```
 Remove the duplicate `resolve` property declaration.
