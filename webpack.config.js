@@ -33,6 +33,12 @@ module: {
   resolve: {
     extensions: ['.js', '.jsx'],
   },
+resolve: {
+```
+Remove the duplicate `resolve` property declaration.
+
+src/index.js:
+
 ```
 resolve: {
         extensions: ['.js', '.jsx'],
