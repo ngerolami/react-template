@@ -1,5 +1,18 @@
 import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import NewPage from '../NewPage/NewPage';
 
-const App = () => <h1>This is a connected react app</h1>;
+const App = () => (
+  <Router>
+    <div>
+      {/* Other routes and components */}
+      <Switch>
+        <Route path="/new-page">
+          <NewPage />
+        </Route>
+      </Switch>
+    </div>
+  </Router>
+);
 
 export default App;
