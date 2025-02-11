@@ -1,9 +1,19 @@
+```jsx
 import { createStore, applyMiddleware } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
+import thunkMiddleware from 'redux-thunk';
+import rootReducer from './reducers';
 
-import reducers from './reducers';
+/**
+ * Configure and create the Redux store.
+ */
+const configureStore = () => {
+  const store = createStore(
+    rootReducer,
+    applyMiddleware(thunkMiddleware)
+  );
 
-const middlewares = [];
+  return store;
+};
 
-export default () =>
-  createStore(reducers, composeWithDevTools({})(applyMiddleware(...middlewares)));
+export default configureStore;
+```
