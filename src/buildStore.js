@@ -1,9 +1,17 @@
+```jsx
 import { createStore, applyMiddleware } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
+import rootReducer from './reducers'; // Assuming you have a root reducer
 
-import reducers from './reducers';
+// Import any necessary middleware
+// ...
 
-const middlewares = [];
+const store = createStore(
+  rootReducer,
+  applyMiddleware(
+    // Apply any necessary middleware here
+    // ...
+  )
+);
 
-export default () =>
-  createStore(reducers, composeWithDevTools({})(applyMiddleware(...middlewares)));
+export default store;
+```
