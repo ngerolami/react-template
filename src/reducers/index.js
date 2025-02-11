@@ -1,7 +1,15 @@
+```jsx
 import { combineReducers } from 'redux';
+import newPageReducer from './newPageReducer'; // Import the new page reducer
 
-import sample from './sample';
+// Import other existing reducers
+// ...
 
-export default combineReducers({
-  sample,
+const rootReducer = combineReducers({
+  newPage: newPageReducer, // Add the new page reducer
+  // Add other existing reducers
+  // ...
 });
+
+export default rootReducer;
+```
