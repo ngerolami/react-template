@@ -1,5 +1,19 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import PreloaderPage from '../PreloaderPage';
 
-const App = () => <h1>This is a connected react app</h1>;
+// Other existing components and imports
+
+const App = () => (
+  <Router>
+    <Switch>
+      {/* Existing routes */}
+      <Route path="/preloader">
+        <PreloaderPage />
+      </Route>
+      {/* Add more routes as needed */}
+    </Switch>
+  </Router>
+);
 
 export default App;
