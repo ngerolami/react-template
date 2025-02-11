@@ -1,5 +1,22 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import PreloaderPage from '../PreloaderPage';
 
-const App = () => <h1>This is a connected react app</h1>;
+// Import other components and dependencies
 
-export default App;
+const App = ({ isLoading }) => {
+  return (
+    <div className="app">
+      {isLoading && <PreloaderPage />}
+      {/* Render other components and content */}
+    </div>
+  );
+};
+
+// Map Redux state to component props
+const mapStateToProps = (state) => ({
+  isLoading: state.preloader.isLoading,
+});
+
+// Connect the component to Redux store
+export default connect(mapStateToProps)(App);
