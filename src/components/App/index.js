@@ -1,5 +1,25 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import PreloaderPage from '../PreloaderPage';
 
-const App = () => <h1>This is a connected react app</h1>;
+/**
+ * App component
+ * 
+ * This is the main component that renders the application.
+ * It conditionally renders the PreloaderPage component based on the application's state.
+ */
+const App = ({ isPreloaderVisible }) => {
+  return (
+    <div>
+      {isPreloaderVisible && <PreloaderPage />}
+      {/* Render other components and routes here */}
+    </div>
+  );
+};
 
-export default App;
+// Map the required state from the Redux store
+const mapStateToProps = state => ({
+  isPreloaderVisible: state.preloader.isPreloaderVisible
+});
+
+export default connect(mapStateToProps)(App);
