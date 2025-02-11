@@ -1,7 +1,14 @@
 import { combineReducers } from 'redux';
+import preloaderReducer from './preloader';
 
-import sample from './sample';
+// Import other reducers as needed
 
-export default combineReducers({
-  sample,
+/**
+ * Root reducer combining all reducers
+ */
+const rootReducer = combineReducers({
+  preloader: preloaderReducer,
+  // Add other reducers
 });
+
+export default rootReducer;
