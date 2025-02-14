@@ -1,0 +1,13 @@
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Preloader from './components/Preloader';
+const App = () => {
+  return (
+    <div>
+      <Preloader />
+      {/* Other components */}
+    </div>
+  );
+};
+ReactDOM.render(<App />, document.getElementById('root'));
