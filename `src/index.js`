@@ -1,0 +1,10 @@
+
+// Import necessary dependencies
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Preloader from './components/Preloader';
+// Render the Preloader component
+ReactDOM.render(<Preloader />, document.getElementById('root'));
+// Import and render the main application component
+import App from './App';
+ReactDOM.render(<App />, document.getElementById('root'));
