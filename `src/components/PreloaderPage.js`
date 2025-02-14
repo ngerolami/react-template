@@ -1,0 +1,28 @@
+
+import React, { useState, useEffect } from 'react';
+const PreloaderPage = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    // Simulate loading delay
+    const loadingDelay = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+    return () => clearTimeout(loadingDelay);
+  }, []);
+  return (
+    <div>
+      {isLoading ? (
+        <div>
+          <h1>Loading...</h1>
+          {/* Add pre-loader animation or spinner */}
+        </div>
+      ) : (
+        <div>
+          <h1>Content Loaded</h1>
+          {/* Add your page content here */}
+        </div>
+      )}
+    </div>
+  );
+};
+export default PreloaderPage;
