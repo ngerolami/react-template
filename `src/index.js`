@@ -1,0 +1,13 @@
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+// Import the new page component with pre-loader
+import PreloaderPage from './components/PreloaderPage';
+ReactDOM.render(
+  <React.StrictMode>
+    {/* Render the PreloaderPage component */}
+    <PreloaderPage />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
