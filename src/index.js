@@ -1,15 +1,12 @@
+
 import React from 'react';
-import { Provider } from 'react-redux';
-import { render } from 'react-dom';
-
-import buildStore from './buildStore';
-import App from './components/App';
-
-const store = buildStore();
-
-render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById('root'),
+import ReactDOM from 'react-dom';
+import Preloader from './components/Preloader';
+const rootElement = document.getElementById('root');
+ReactDOM.render(
+  <React.StrictMode>
+    <Preloader />
+    {/* Your app content here */}
+  </React.StrictMode>,
+  rootElement
 );
