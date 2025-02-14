@@ -1,0 +1,11 @@
+
+import React from 'react';
+const PreloaderPage = () => {
+  return (
+    <div>
+      <h1>Loading...</h1>
+      {/* Add the preloader component or animation here */}
+    </div>
+  );
+};
+export default PreloaderPage;
