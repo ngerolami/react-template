@@ -1,0 +1,18 @@
+
+import React, { useState, useEffect } from 'react';
+const PreLoader = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    // Simulate a delay for the pre-loader
+    const timeout = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000); // Adjust the delay time as needed
+    return () => clearTimeout(timeout);
+  }, []);
+  return isLoading ? (
+    <div className="pre-loader">
+      <div className="spinner"></div>
+    </div>
+  ) : null;
+};
+export default PreLoader;
