@@ -1,0 +1,16 @@
+
+// Import the necessary modules and components
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import PreloaderPage from './components/PreloaderPage';
+// Render the application with the new PreloaderPage component
+ReactDOM.render(
+  <Router>
+    <Switch>
+      <Route path="/preloader" component={PreloaderPage} />
+      {/* Add other routes here */}
+    </Switch>
+  </Router>,
+  document.getElementById('root')
+);
