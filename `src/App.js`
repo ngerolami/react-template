@@ -1,0 +1,18 @@
+
+import React, { useState, useEffect } from 'react';
+import Preloader from './Preloader';
+function App() {
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    // Simulate loading delay
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+  }, []);
+  return (
+    <div>
+      {isLoading ? <Preloader /> : <div>Content loaded</div>}
+    </div>
+  );
+}
+export default App;
