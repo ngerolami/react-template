@@ -1,0 +1,11 @@
+
+import React from 'react';
+const Preloader = () => {
+  return (
+    <div className="preloader">
+      {/* Add your preloader UI elements and styles here */}
+      <div className="spinner"></div>
+    </div>
+  );
+};
+export default Preloader;
