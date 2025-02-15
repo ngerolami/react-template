@@ -1,0 +1,13 @@
+
+import React from 'react';
+import PreLoader from './components/PreLoader';
+import NewPage from './pages/NewPage';
+function App() {
+  return (
+    <div>
+      <PreLoader />
+      <NewPage />
+    </div>
+  );
+}
+export default App;
