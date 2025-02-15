@@ -1,0 +1,9 @@
+
+import React from 'react';
+const NewPage = () => (
+  <div>
+    <h1>New Page</h1>
+    <p>This is the new page with a pre-loader.</p>
+  </div>
+);
+export default NewPage;
