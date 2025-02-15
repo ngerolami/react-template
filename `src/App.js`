@@ -1,0 +1,12 @@
+
+import React from 'react';
+import Preloader from './Preloader';
+function App() {
+  return (
+    <div>
+      <Preloader />
+      {/* Existing app content */}
+    </div>
+  );
+}
+export default App;
