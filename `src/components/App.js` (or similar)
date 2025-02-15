@@ -1,0 +1,17 @@
+
+import React, { lazy, Suspense } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Preloader from './Preloader';
+const HomePage = lazy(() => import('./HomePage'));
+const NewPage = lazy(() => import('./NewPage'));
+const App = () => (
+  <Router>
+    <Suspense fallback={<Preloader />}>
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route path="/new-page" component={NewPage} />
+      </Switch>
+    </Suspense>
+  </Router>
+);
+export default App;
