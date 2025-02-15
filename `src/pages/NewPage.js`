@@ -1,0 +1,14 @@
+
+import React from 'react';
+import Preloader from '../components/Preloader';
+const NewPage = () => {
+  return (
+    <div>
+      <Preloader />
+      {/* Add your page content here */}
+      <h1>New Page</h1>
+      <p>This is the new page with a pre-loader.</p>
+    </div>
+  );
+};
+export default NewPage;
