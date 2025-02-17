@@ -1,0 +1,34 @@
+
+import { startLoading, stopLoading, setLoadingCallback } from '../utils/loadingUtils';
+describe('loadingUtils', () => {
+  let loadingCallback;
+  beforeEach(() => {
+    loadingCallback = jest.fn();
+    setLoadingCallback(loadingCallback);
+  });
+  afterEach(() => {
+    setLoadingCallback(null);
+  });
+  it('should call the callback when loading starts', () => {
+    startLoading();
+    expect(loadingCallback).toHaveBeenCalledWith(true);
+  });
+  it('should not call the callback when loading starts multiple times', () => {
+    startLoading();
+    loadingCallback.mockClear();
+    startLoading();
+    expect(loadingCallback).not.toHaveBeenCalled();
+  });
+  it('should call the callback when loading stops', () => {
+    startLoading();
+    stopLoading();
+    expect(loadingCallback).toHaveBeenCalledWith(false);
+  });
+  it('should not call the callback when loading stops multiple times', () => {
+    startLoading();
+    stopLoading();
+    loadingCallback.mockClear();
+    stopLoading();
+    expect(loadingCallback).not.toHaveBeenCalled();
+  });
+});
