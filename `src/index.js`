@@ -1,0 +1,12 @@
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+const root = document.getElementById('root');
+const renderApp = () => {
+  ReactDOM.render(<App />, root);
+};
+// Render a loading message while the application is loading
+root.innerHTML = 'Loading...';
+// Simulate a delay to display the pre-loader
+setTimeout(renderApp, 2000);
