@@ -1,0 +1,9 @@
+
+import React from 'react';
+const LoadingIndicator = () => (
+  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+    <div className="loader" />
+    <span>Loading...</span>
+  </div>
+);
+export default LoadingIndicator;
