@@ -1,0 +1,10 @@
+
+import React from 'react';
+const LoadingIndicator = () => (
+  <div className="loading-indicator">
+    <span className="loading-dot dot-1" />
+    <span className="loading-dot dot-2" />
+    <span className="loading-dot dot-3" />
+  </div>
+);
+export default LoadingIndicator;
