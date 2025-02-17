@@ -1,0 +1,14 @@
+
+import React, { lazy, Suspense } from 'react';
+import ReactDOM from 'react-dom';
+import LoadingIndicator from './components/LoadingIndicator';
+// Lazy-load your application components
+const App = lazy(() => import('./App'));
+ReactDOM.render(
+  <React.StrictMode>
+    <Suspense fallback={<LoadingIndicator />}>
+      <App />
+    </Suspense>
+  </React.StrictMode>,
+  document.getElementById('root')
+);
