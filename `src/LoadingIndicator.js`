@@ -1,0 +1,17 @@
+
+import React from 'react';
+const LoadingIndicator = () => (
+  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+    <div
+      style={{
+        width: '40px',
+        height: '40px',
+        borderRadius: '50%',
+        border: '5px solid #ccc',
+        borderTopColor: '#333',
+        animation: 'rotate 1s linear infinite',
+      }}
+    />
+  </div>
+);
+export default LoadingIndicator;
