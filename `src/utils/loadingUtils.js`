@@ -1,0 +1,18 @@
+
+let loadingCount = 0;
+let loadingCallback = null;
+export const startLoading = () => {
+  loadingCount++;
+  if (loadingCount === 1 && loadingCallback) {
+    loadingCallback(true);
+  }
+};
+export const stopLoading = () => {
+  loadingCount--;
+  if (loadingCount === 0 && loadingCallback) {
+    loadingCallback(false);
+  }
+};
+export const setLoadingCallback = (callback) => {
+  loadingCallback = callback;
+};
