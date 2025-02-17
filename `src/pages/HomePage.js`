@@ -1,0 +1,25 @@
+
+import React, { useState, useEffect } from 'react';
+import LoadingIndicator from '../components/LoadingIndicator';
+const HomePage = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [data, setData] = useState(null);
+  useEffect(() => {
+    // Simulating an asynchronous data fetch
+    setTimeout(() => {
+      setData({ message: 'Data loaded!' });
+      setIsLoading(false);
+    }, 2000);
+  }, []);
+  return (
+    <div>
+      <h1>Home Page</h1>
+      {isLoading ? (
+        <LoadingIndicator />
+      ) : (
+        <p>{data.message}</p>
+      )}
+    </div>
+  );
+};
+export default HomePage;
