@@ -1,0 +1,29 @@
+
+const path = require('path');
+module.exports = {
+  entry: './src/index.js',
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js',
+    chunkFilename: '[name].bundle.js', // Needed for code splitting
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+        },
+      },
+    ],
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'async', // Enable code splitting for async imports
+    },
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
+};
