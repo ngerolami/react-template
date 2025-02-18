@@ -1,0 +1,19 @@
+
+import React, { useState } from 'react';
+import LoadingIndicator from './components/LoadingIndicator';
+function App() {
+  const [isLoading, setIsLoading] = useState(false);
+  const handleLoadingStart = () => {
+    setIsLoading(true);
+  };
+  const handleLoadingEnd = () => {
+    setIsLoading(false);
+  };
+  return (
+    <div>
+      <LoadingIndicator isLoading={isLoading} />
+      {/* Rest of the app components */}
+    </div>
+  );
+}
+export default App;
