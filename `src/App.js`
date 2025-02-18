@@ -1,0 +1,26 @@
+
+import React, { useState } from 'react';
+const App = () => {
+  const [isLoading, setIsLoading] = useState(false);
+  const handleLoadingStart = () => {
+    setIsLoading(true);
+  };
+  const handleLoadingEnd = () => {
+    setIsLoading(false);
+  };
+  return (
+    <div>
+      <button onClick={handleLoadingStart}>Start Loading</button>
+      <button onClick={handleLoadingEnd}>Stop Loading</button>
+      {isLoading && <LoadingIndicator />}
+      {/* Rest of the app components */}
+    </div>
+  );
+};
+const LoadingIndicator = () => (
+  <div className="loading-indicator">
+    <div className="spinner"></div>
+    <span>Loading...</span>
+  </div>
+);
+export default App;
