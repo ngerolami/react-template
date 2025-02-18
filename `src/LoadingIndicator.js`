@@ -1,0 +1,11 @@
+
+import React from 'react';
+import './LoadingIndicator.css';
+const LoadingIndicator = ({ isLoading }) => {
+  return isLoading ? (
+    <div className="loading-overlay">
+      <div className="loading-spinner" />
+    </div>
+  ) : null;
+};
+export default LoadingIndicator;
