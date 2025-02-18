@@ -1,0 +1,28 @@
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+// Import the LoadingIndicator component
+import LoadingIndicator from './components/LoadingIndicator';
+// Add state to manage loading state
+class AppRoot extends React.Component {
+  state = {
+    isLoading: false,
+  };
+  componentDidMount() {
+    // Simulate loading after 2 seconds
+    setTimeout(() => {
+      this.setState({ isLoading: false });
+    }, 2000);
+  }
+  render() {
+    const { isLoading } = this.state;
+    return (
+      <>
+        {isLoading && <LoadingIndicator />}
+        <App />
+      </>
+    );
+  }
+}
+ReactDOM.render(<AppRoot />, document.getElementById('root'));
