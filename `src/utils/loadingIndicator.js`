@@ -1,0 +1,18 @@
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import LoadingIndicator from '../components/LoadingIndicator';
+let loadingIndicatorElement = null;
+export const showLoadingIndicator = () => {
+  if (!loadingIndicatorElement) {
+    const div = document.createElement('div');
+    document.body.appendChild(div);
+    loadingIndicatorElement = ReactDOM.render(<LoadingIndicator />, div);
+  }
+};
+export const hideLoadingIndicator = () => {
+  if (loadingIndicatorElement) {
+    ReactDOM.unmountComponentAtNode(loadingIndicatorElement);
+    loadingIndicatorElement = null;
+  }
+};
