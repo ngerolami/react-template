@@ -1,15 +1,10 @@
+
 import React from 'react';
-import { Provider } from 'react-redux';
-import { render } from 'react-dom';
-
-import buildStore from './buildStore';
-import App from './components/App';
-
-const store = buildStore();
-
-render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById('root'),
+import ReactDOM from 'react-dom';
+import LoadingIndicator from './components/LoadingIndicator';
+ReactDOM.render(
+  <React.StrictMode>
+    <LoadingIndicator />
+  </React.StrictMode>,
+  document.getElementById('root')
 );
