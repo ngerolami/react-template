@@ -1,0 +1,27 @@
+
+import React, { useState, useEffect } from 'react';
+import LoadingIndicator from './LoadingIndicator';
+const App = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [data, setData] = useState(null);
+  useEffect(() => {
+    // Simulating data fetching
+    setTimeout(() => {
+      setIsLoading(false);
+      setData({ /* mocked data */ });
+    }, 2000);
+  }, []);
+  return (
+    <div>
+      {isLoading ? (
+        <LoadingIndicator />
+      ) : (
+        <div>
+          {/* Render your application content here */}
+          <pre>{JSON.stringify(data, null, 2)}</pre>
+        </div>
+      )}
+    </div>
+  );
+};
+export default App;
