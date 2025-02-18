@@ -1,0 +1,23 @@
+
+import React, { Component } from 'react';
+import LoadingIndicator from './LoadingIndicator';
+const AsyncComponent = (importComponent) => {
+  class AsyncComponentWrapper extends Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        component: null,
+      };
+    }
+    async componentDidMount() {
+      const { default: component } = await importComponent();
+      this.setState({ component });
+    }
+    render() {
+      const { component } = this.state;
+      return component ? <component.default {...this.props} /> : <LoadingIndicator />;
+    }
+  }
+  return AsyncComponentWrapper;
+};
+export default AsyncComponent;
