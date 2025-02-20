@@ -1,0 +1,12 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My App</title>
+</head>
+<body>
+    <div id="preloader">Loading...</div>
+    <div id="content" style="display: none;"></div>
+    <script src="bundle.js"></script>
+</body>
+</html>
