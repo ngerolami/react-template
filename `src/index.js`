@@ -1,0 +1,16 @@
+
+// src/index.js
+import './styles.css'; // Import CSS for styling
+const preloader = document.createElement('div');
+preloader.id = 'preloader';
+preloader.innerHTML = '<div class="spinner"></div>'; // Simple spinner HTML
+document.body.appendChild(preloader);
+window.addEventListener('load', () => {
+  // Hide preloader after page load
+  preloader.style.display = 'none';
+  // Create main content
+  const content = document.createElement('div');
+  content.id = 'content';
+  content.innerHTML = '<h1>Hello, World!</h1><p>This is the new page.</p>';
+  document.body.appendChild(content);
+});
