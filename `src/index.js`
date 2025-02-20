@@ -1,0 +1,12 @@
+
+import './styles.css';
+const preloader = document.createElement('div');
+preloader.id = 'preloader';
+preloader.innerHTML = 'Loading...';
+document.body.appendChild(preloader);
+window.addEventListener('load', () => {
+  const app = document.createElement('div');
+  app.id = 'app';
+  app.innerHTML = '<h1>New Page</h1>';
+  document.body.replaceChild(app, preloader);
+});
