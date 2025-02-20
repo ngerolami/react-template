@@ -1,0 +1,21 @@
+
+// src/index.js
+import './styles.css'; // Import CSS for styling (new file)
+const preloader = document.getElementById('preloader');
+const content = document.getElementById('content');
+window.addEventListener('load', () => {
+  // Hide preloader and show content after page load
+  preloader.style.display = 'none';
+  content.style.display = 'block';
+  // Add navigation logic if needed (e.g., click event to load new page content)
+  const newPageLink = document.getElementById('newPageLink'); 
+  if (newPageLink) {
+    newPageLink.addEventListener('click', (event) => {
+      event.preventDefault(); // Prevent default link behavior
+      // Logic to load new page content dynamically or navigate to a new HTML file
+      console.log('Navigating to new page...'); // Replace with actual navigation/content loading
+    });
+  }
+});
+// Example code to add content to the 'content' div
+content.innerHTML = '<p>This is the main content.</p><a href="#" id="newPageLink">Go to new page</a>';
