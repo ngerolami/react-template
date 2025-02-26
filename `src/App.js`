@@ -1,0 +1,27 @@
+
+// Original Code (Hypothetical)
+import React from 'react';
+function App() {
+  return (
+    <div>
+      <h1>Existing App</h1>
+    </div>
+  );
+}
+export default App;
+
+// Modified Code
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import LoadingPage from './components/LoadingPage';
+function App() {
+  return (
+    <Router>
+       <Routes>
+         <Route path="/loading" element={<LoadingPage />} />
+         <Route path="/" element={<h1>Existing App</h1>} /> {/* Existing Route */}
+       </Routes>
+    </Router>
+  );
+}
+export default App;
