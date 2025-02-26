@@ -1,0 +1,11 @@
+
+--- a/index.ejs
++++ b/index.ejs
+@@ -1 +1,6 @@
+-<div id="root"></div>
++<div id="root">
++  <style>
++    /* Include Preloader styles directly or link to the CSS file */
++    <%- include('./components/Preloader.css') %> /* Example using include */
++  </style>
++</div>
