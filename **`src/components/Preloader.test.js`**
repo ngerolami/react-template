@@ -1,0 +1,10 @@
+
+// src/components/Preloader.test.js
+import React from 'react';
+import { render, screen } from '@testing-library/react';
+import Preloader from './Preloader';
+test('renders preloader component', () => {
+  render(<Preloader />);
+  const spinnerElement = screen.getByRole('progressbar'); // or query by class .spinner if no suitable role
+  expect(spinnerElement).toBeInTheDocument();
+});
