@@ -1,0 +1,38 @@
+
+import React, { useState } from 'react';
+const MultiSelectDropdown = ({ options, onChange }) => {
+  const [selectedOptions, setSelectedOptions] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+  const handleOptionClick = (option) => {
+    const updatedSelection = selectedOptions.includes(option)
+      ? selectedOptions.filter((item) => item !== option)
+      : [...selectedOptions, option];
+    setSelectedOptions(updatedSelection);
+    onChange(updatedSelection);
+  };
+  const filteredOptions = options.filter((option) =>
+    option.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+  return (
+    <div>
+      <input
+        type="text"
+        placeholder="Search..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
+      <ul>
+        {filteredOptions.map((option) => (
+          <li
+            key={option}
+            onClick={() => handleOptionClick(option)}
+            style={{ backgroundColor: selectedOptions.includes(option) ? 'lightblue' : 'white' }}
+          >
+            {option}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+export default MultiSelectDropdown;
