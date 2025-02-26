@@ -1,0 +1,16 @@
+
+<!-- src/pages/newPage.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>New Page</title>
+</head>
+<body>
+  <div id="preloader">Loading...</div>
+  <div id="content" style="display: none;">
+    <h1>Welcome to the New Page!</h1>
+    <p>This is the content of the new page.</p>
+  </div>
+  <script src="newPage.js"></script>
+</body>
+</html>
