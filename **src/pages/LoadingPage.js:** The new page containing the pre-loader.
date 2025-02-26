@@ -1,0 +1,21 @@
+
+import React, { useState, useEffect } from 'react';
+import Preloader from '../components/Preloader';
+import './LoadingPage.css';
+const LoadingPage = () => {
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    // Simulate loading time (replace with actual loading logic)
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000); 
+  }, []);
+  return (
+    <div className="loading-page">
+      {loading && <Preloader />}
+      {!loading && <p>Content loaded!</p>} {/* Replace with actual content */}
+    </div>
+  );
+};
+
+export default LoadingPage;
