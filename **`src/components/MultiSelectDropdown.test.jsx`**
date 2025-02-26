@@ -1,0 +1,24 @@
+
+import React from 'react';
+import { render, fireEvent } from '@testing-library/react';
+import MultiSelectDropdown from './MultiSelectDropdown';
+const options = [{ value: 1, label: 'Option 1' }, { value: 2, label: 'Option 2' }];
+test('renders placeholder text', () => {
+  const { getByText } = render(<MultiSelectDropdown options={options} placeholder="Select Options" />);
+  expect(getByText('Select Options')).toBeInTheDocument();
+});
+test('displays options on click', () => {
+  const { getByText, container } = render(<MultiSelectDropdown options={options} placeholder="Select Options" />);
+  fireEvent.click(container.firstChild);
+  expect(getByText('Option 1')).toBeInTheDocument();
+  expect(getByText('Option 2')).toBeInTheDocument();
+});
+test('selects and deselects options', () => {
+  const { getByText, container } = render(<MultiSelectDropdown options={options} placeholder="Select Options" />);
+  fireEvent.click(container.firstChild);
+  fireEvent.click(getByText('Option 1'));
+  expect(getByText('Option 1')).toHaveClass('selected');
+  fireEvent.click(getByText('Option 1'));
+  expect(getByText('Option 1')).not.toHaveClass('selected');
+});
+// Add more tests for search functionality and edge cases
