@@ -1,0 +1,14 @@
+
+// src/components/Preloader.js
+export default function Preloader() {
+  const preloader = document.createElement('div');
+  preloader.id = 'preloader';
+  preloader.innerHTML = `
+    <div class="spinner"></div>
+  `;
+  document.body.appendChild(preloader);
+  window.addEventListener('load', () => {
+    preloader.style.display = 'none';
+  });
+  return preloader;
+}
