@@ -1,0 +1,25 @@
+
+// Original code (example)
+import React from 'react';
+function App() {
+  return (
+    <div className="App">
+      <h1>My App</h1>
+    </div>
+  );
+}
+export default App;
+
+// Modified code
+import React from 'react';
+import MultiSelectDropdown from './components/MultiSelectDropdown';
+const options = [{ value: 1, label: 'Option 1' }, { value: 2, label: 'Option 2' }, { value: 3, label: 'Option 3' }];
+function App() {
+  return (
+    <div className="App">
+      <h1>My App</h1>
+      <MultiSelectDropdown options={options} placeholder="Select Options" />
+    </div>
+  );
+}
+export default App;
