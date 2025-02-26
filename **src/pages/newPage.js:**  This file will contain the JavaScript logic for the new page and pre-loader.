@@ -1,0 +1,12 @@
+
+// src/pages/newPage.js
+document.addEventListener('DOMContentLoaded', () => {
+  const preloader = document.getElementById('preloader');
+  // Simulate loading delay
+  setTimeout(() => {
+    preloader.style.display = 'none';
+    // Rest of page content can be loaded/displayed here
+    const content = document.getElementById('content');
+    content.style.display = 'block';
+  }, 2000); // Hide preloader after 2 seconds
+});
