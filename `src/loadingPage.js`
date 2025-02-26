@@ -1,0 +1,10 @@
+
+document.addEventListener('DOMContentLoaded', () => {
+  const preloader = document.getElementById('preloader');
+  const content = document.getElementById('content');
+  // Simulate loading process (replace with actual loading logic)
+  setTimeout(() => {
+    preloader.style.display = 'none';
+    content.style.display = 'block';
+  }, 2000); // Hide preloader after 2 seconds
+});
