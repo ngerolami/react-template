@@ -1,0 +1,28 @@
+
+// ... imports ...
+import App from './App';
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+
+// ... imports ...
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import App from './App';
+import LoadingPage from './pages/LoadingPage';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+     <BrowserRouter>
+        <Routes>
+          <Route path="/loading" element={<LoadingPage />} />
+          <Route path="/*" element={<App />} /> {/* Matches all other paths */}
+        </Routes>
+      </BrowserRouter>
+  </React.StrictMode>
+);
