@@ -1,0 +1,22 @@
+
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Preloader from '../components/Preloader';
+const LoadingPage = () => {
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    // Simulate loading process - replace with actual logic
+    setTimeout(() => {
+      setLoading(false);
+      navigate('/'); // Redirect to home page after loading
+    }, 2000);
+  }, [navigate]);
+  return (
+    <>
+      {loading && <Preloader />}
+      {/* Content to be displayed after loading can be added here */}
+    </>
+  );
+};
+export default LoadingPage;
