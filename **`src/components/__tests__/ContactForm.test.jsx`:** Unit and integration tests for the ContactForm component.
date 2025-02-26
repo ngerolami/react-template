@@ -1,0 +1,36 @@
+
+import React from 'react';
+import { render, screen, fireEvent } from '@testing-library/react';
+import ContactForm from '../ContactForm';
+describe('ContactForm', () => {
+  it('renders the form elements', () => {
+    render(<ContactForm />);
+    expect(screen.getByLabelText('Name:')).toBeInTheDocument();
+    expect(screen.getByLabelText('Email:')).toBeInTheDocument();
+    expect(screen.getByLabelText('Message:')).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /submit/i })).toBeInTheDocument();
+  });
+  it('validates email address', () => {
+    render(<ContactForm />);
+    fireEvent.change(screen.getByLabelText('Email:'), { target: { value: 'invalid-email' } });
+    fireEvent.click(screen.getByRole('button', { name: /submit/i }));
+    expect(screen.getByText('Invalid email address')).toBeVisible();
+    fireEvent.change(screen.getByLabelText('Email:'), { target: { value: 'test@example.com' } });
+    fireEvent.click(screen.getByRole('button', { name: /submit/i }));
+    expect(screen.queryByText('Invalid email address')).not.toBeInTheDocument();
+  });
+  it('submits the form with valid data', () => {
+    const consoleSpy = jest.spyOn(console, 'log');
+    render(<ContactForm />);
+    fireEvent.change(screen.getByLabelText('Name:'), { target: { value: 'John Doe' } });
+    fireEvent.change(screen.getByLabelText('Email:'), { target: { value: 'john.doe@example.com' } });
+    fireEvent.change(screen.getByLabelText('Message:'), { target: { value: 'Test message' } });
+    fireEvent.click(screen.getByRole('button', { name: /submit/i }));
+    expect(consoleSpy).toHaveBeenCalledWith('Form submitted:', {
+      name: 'John Doe',
+      email: 'john.doe@example.com',
+      message: 'Test message',
+    });
+    consoleSpy.mockRestore(); // Restore the original console.log
+  });
+});
