@@ -1,0 +1,14 @@
+
+// Original code (example)
+// module.exports = {
+//   entry: './src/index.js',
+//   // ... rest of the config
+// };
+// Modified code
+module.exports = {
+  entry: {
+    index: './src/index.js',
+    loadingPage: './src/loadingPage.js',
+  },
+  // ... rest of the config
+};
