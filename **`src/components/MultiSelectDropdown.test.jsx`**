@@ -1,0 +1,31 @@
+
+import React from 'react';
+import { render, fireEvent } from '@testing-library/react';
+import MultiSelectDropdown from './MultiSelectDropdown';
+test('renders options and allows multiple selections', () => {
+  const options = ['Apple', 'Banana', 'Orange'];
+  const onChange = jest.fn();
+  const { getByText, getAllByRole } = render(<MultiSelectDropdown options={options} onChange={onChange} />);
+  // Check if options are rendered
+  options.forEach((option) => expect(getByText(option)).toBeInTheDocument());
+  // Select multiple options
+  fireEvent.click(getByText('Apple'));
+  fireEvent.click(getByText('Orange'));
+  // Check if onChange is called with the correct selections
+  expect(onChange).toHaveBeenCalledTimes(2);
+  expect(onChange).toHaveBeenLastCalledWith(['Apple', 'Orange']);
+
+  // Test deselection
+  fireEvent.click(getByText('Apple'));
+  expect(onChange).toHaveBeenLastCalledWith(['Orange']);
+});
+test('filters options based on search term', () => {
+  const options = ['Apple', 'Banana', 'Orange'];
+  const { getByPlaceholderText, getAllByRole } = render(<MultiSelectDropdown options={options} onChange={() => {}} />);
+  const searchInput = getByPlaceholderText('Search...');
+  fireEvent.change(searchInput, { target: { value: 'a' } });
+  // Expect Apple and Banana to be visible (case-insensitive)
+  expect(getAllByRole('listitem')).toHaveLength(2);
+  fireEvent.change(searchInput, { target: { value: 'Orange' } });
+  expect(getAllByRole('listitem')).toHaveLength(1);
+});
