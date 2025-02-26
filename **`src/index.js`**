@@ -1,0 +1,21 @@
+
+// src/index.js
+// Original Code (Hypothetical -  Likely empty or with minimal content)
+// console.log('Hello from index.js');
+// Modified Code
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import Preloader from './components/Preloader';
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Preloader />); // Initially render the preloader
+window.addEventListener('load', () => {
+  const preloader = document.querySelector('.preloader');
+  preloader.style.display = 'none';
+  // Render the actual application content here
+  root.render(
+    <React.StrictMode>
+        {/* Your app content */}
+        <div>App Content Loaded</div> 
+    </React.StrictMode>
+  );
+});
