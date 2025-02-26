@@ -1,0 +1,23 @@
+
+// Original Code (example)
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+ReactDOM.render(
+  <React.StrictMode>
+    {/* Existing content */}
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+// Modified Code
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import LoadingPage from './pages/LoadingPage'; // Import LoadingPage
+
+ReactDOM.render(
+  <React.StrictMode>
+      <LoadingPage />  {/* Render the loading page */}
+  </React.StrictMode>,
+  document.getElementById('root')
+);
