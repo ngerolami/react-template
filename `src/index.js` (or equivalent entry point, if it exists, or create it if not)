@@ -1,0 +1,5 @@
+
+// src/index.js - New File
+import Preloader from './components/Preloader';
+import './styles/preloader.css';
+Preloader();
