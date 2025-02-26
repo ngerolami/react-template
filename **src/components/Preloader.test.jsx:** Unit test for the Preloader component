@@ -1,0 +1,8 @@
+
+import React from 'react';
+import { render, screen } from '@testing-library/react';
+import Preloader from './Preloader';
+test('renders the preloader component', () => {
+  render(<Preloader />);
+  expect(screen.getByRole('progressbar')).toBeInTheDocument(); // or other suitable query based on implementation
+});
