@@ -1,0 +1,13 @@
+
+import React from 'react';
+import { render, screen, waitFor } from '@testing-library/react';
+import App from './App';
+
+test('shows preloader initially and then hides it', async () => {
+  render(<App />);
+  expect(screen.getByText('Loading...')).toBeVisible(); // Preloader should be visible
+  await waitFor(() => { // Wait for the loading state to change
+      expect(screen.queryByText('Loading...')).toBeNull(); // Preloader should be hidden
+  });
+  expect(screen.getByText('App Content Loaded')).toBeVisible(); // Content should be visible
+});
