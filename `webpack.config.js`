@@ -1,0 +1,16 @@
+
+// webpack.config.js - Modified
+const path = require('path');
+module.exports = {
+  // ... existing configuration ...
+  module: {
+    rules: [
+      // ... existing rules ...
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
+      }
+    ]
+  },
+  // ... rest of configuration ...
+};
