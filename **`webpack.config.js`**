@@ -1,0 +1,20 @@
+
+--- a/webpack.config.js
++++ b/webpack.config.js
+@@ -8,6 +8,16 @@
+       {
+         test: /\.js$/,
+         exclude: /node_modules/,
++        use: {
++          loader: 'babel-loader'
++        }
++      },
++      { // Add this rule for CSS files
++        test: /\.css$/,
++        use: [
++          'style-loader',
++          'css-loader'
++        ]
+       }
+     ]
+   },
