@@ -1,0 +1,13 @@
+
+<!-- index.ejs - Modified -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My App</title>
+  <%- include('partials/head') %>  <!-- Assuming existing head partials -->
+  <link rel="stylesheet" href="main.css"> <!-- Assuming main.css is the output -->
+</head>
+<body>
+  <!-- ... rest of the body ... -->
+</body>
+</html>
