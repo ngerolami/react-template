@@ -1,0 +1,17 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Loading...</title>
+</head>
+<body>
+  <div id="preloader">
+    <div class="spinner"></div>
+  </div>
+  <div id="content" style="display: none;">
+    <h1>Welcome!</h1>
+    <p>Page content goes here.</p>
+  </div>
+  <script src="loadingPage.js"></script>
+</body>
+</html>
