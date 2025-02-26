@@ -1,0 +1,27 @@
+
+// Original Code (example)
+import React from 'react';
+function App() {
+  return (
+    <div className="App">
+      {/* Existing content */}
+    </div>
+  );
+}
+export default App;
+
+// Modified Code
+import React, { useState } from 'react';
+import MultiSelectDropdown from './components/MultiSelectDropdown';
+function App() {
+  const [selectedFruits, setSelectedFruits] = useState([]);
+  const fruits = ['Apple', 'Banana', 'Orange', 'Grape', 'Mango'];
+  return (
+    <div className="App">
+      <MultiSelectDropdown options={fruits} onChange={setSelectedFruits} />
+      <p>Selected Fruits: {selectedFruits.join(', ')}</p> 
+      {/* Existing content */}
+    </div>
+  );
+}
+export default App;
