@@ -1,0 +1,49 @@
+
+import React, { useState } from 'react';
+const MultiSelectDropdown = ({ options, placeholder }) => {
+  const [selectedOptions, setSelectedOptions] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [isOpen, setIsOpen] = useState(false);
+  const filteredOptions = options.filter(option => 
+    option.label.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+  const handleOptionClick = (option) => {
+    const isSelected = selectedOptions.includes(option);
+    setSelectedOptions(isSelected
+      ? selectedOptions.filter(o => o !== option)
+      : [...selectedOptions, option]
+    );
+  };
+  return (
+    <div className="multi-select-dropdown">
+      <div className="dropdown-header" onClick={() => setIsOpen(!isOpen)}>
+        {selectedOptions.length > 0 
+          ? selectedOptions.map(o => o.label).join(', ')
+          : placeholder}
+        <span className="dropdown-arrow">&#9660;</span>
+      </div>
+      {isOpen && (
+        <div className="dropdown-list">
+          <input 
+            type="text" 
+            placeholder="Search..." 
+            value={searchTerm} 
+            onChange={e => setSearchTerm(e.target.value)} 
+          />
+          <ul>
+            {filteredOptions.map(option => (
+              <li 
+                key={option.value} 
+                onClick={() => handleOptionClick(option)}
+                className={selectedOptions.includes(option) ? 'selected' : ''}
+              >
+                {option.label}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </div>
+  );
+};
+export default MultiSelectDropdown;
