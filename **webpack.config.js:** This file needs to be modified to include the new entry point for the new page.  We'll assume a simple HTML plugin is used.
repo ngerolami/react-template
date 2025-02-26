@@ -1,0 +1,39 @@
+
+// webpack.config.js (Original - hypothetical example)
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+module.exports = {
+  // ... existing configuration
+  entry: './src/index.js', // existing entry
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './index.ejs',
+      filename: 'index.html' // existing output file
+    })
+  ],
+  // ... rest of the configuration
+};
+
+// webpack.config.js (Modified)
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+module.exports = {
+  // ... existing configuration
+  entry: {
+    index: './src/index.js',
+    newPage: './src/pages/newPage.js'
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './index.ejs',
+      filename: 'index.html',
+      chunks: ['index']
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/pages/newPage.html',
+      filename: 'newPage.html',
+      chunks: ['newPage']
+    })
+  ],
+  // ... rest of the configuration
+};
