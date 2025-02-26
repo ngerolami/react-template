@@ -1,0 +1,10 @@
+
+--- a/index.ejs
++++ b/index.ejs
+@@ -1 +1,5 @@
+ <!DOCTYPE html>
++<html>
++<body>
++  <div id="root"></div>
++</body>
++</html>
